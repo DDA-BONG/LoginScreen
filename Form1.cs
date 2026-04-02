@@ -15,11 +15,11 @@ namespace LoginScreen
             string inputPW = txtPW.Text;
             if (inputID == MyID && inputPW == MyPW)
             {
-                MessageBox.Show("로그인 성공!");
+                MessageBox.Show("로그인 성공!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("로그인 실패!");
+                MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -30,12 +30,12 @@ namespace LoginScreen
                 txtID.Text = ""; // ID 텍스트박스 포커스 시 초기화
                 txtID.ForeColor = Color.Black; // 텍스트 색상을 검정색으로 변경
             }
-                
+
         }
 
         private void txtID_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtID.Text))
+            if (string.IsNullOrWhiteSpace(txtID.Text))
             {
                 txtID.Text = "아이디"; // ID 텍스트박스 포커스 해제 시 초기값으로 설정
                 txtID.ForeColor = Color.Silver; // 텍스트 색상을 회색으로 변경
@@ -54,12 +54,32 @@ namespace LoginScreen
 
         private void txtPW_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtPW.Text)) 
+            if (string.IsNullOrWhiteSpace(txtPW.Text))
             {
                 txtPW.UseSystemPasswordChar = false; // PW 텍스트박스에 입력된 문자를 일반 텍스트로 표시
                 txtPW.Text = "패스워드"; // PW 텍스트박스 포커스 해제 시 초기값으로 설정
                 txtPW.ForeColor = Color.Silver; // 텍스트 색상을 회색으로 변경
             }
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Enter 키 입력 방지
+                txtPW.Focus(); // PW 텍스트박스로 포커스 이동
+            }
+        }
+        
+
+        private void txtPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Enter 키 입력 방지
+                btnLogin.PerformClick(); // 로그인 버튼 클릭 이벤트 실행
+            }
+
         }
     }
 }
