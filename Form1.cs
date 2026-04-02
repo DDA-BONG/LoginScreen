@@ -15,11 +15,13 @@ namespace LoginScreen
             string inputPW = txtPW.Text;
             if (inputID == MyID && inputPW == MyPW)
             {
+                lblErrorMsg.Visible = false;
                 MessageBox.Show("로그인 성공!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                //MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                lblErrorMsg.Visible = true;
             }
         }
 
@@ -70,7 +72,7 @@ namespace LoginScreen
                 txtPW.Focus(); // PW 텍스트박스로 포커스 이동
             }
         }
-        
+
 
         private void txtPW_KeyDown(object sender, KeyEventArgs e)
         {
@@ -79,6 +81,11 @@ namespace LoginScreen
                 e.SuppressKeyPress = true; // Enter 키 입력 방지
                 btnLogin.PerformClick(); // 로그인 버튼 클릭 이벤트 실행
             }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }
