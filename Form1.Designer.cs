@@ -28,92 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblId = new Label();
-            lblPassword = new Label();
-            txtId = new TextBox();
-            txtPassword = new TextBox();
+            txtID = new TextBox();
+            txtPW = new TextBox();
             btnLogin = new Button();
-            lbl_main = new Label();
+            lblAppName = new Label();
             SuspendLayout();
             // 
-            // lblId
+            // txtID
             // 
-            lblId.AutoSize = true;
-            lblId.Font = new Font("맑은 고딕", 10F);
-            lblId.Location = new Point(86, 182);
-            lblId.Margin = new Padding(4, 0, 4, 0);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(61, 23);
-            lblId.TabIndex = 0;
-            lblId.Text = "아이디";
+            txtID.Font = new Font("맑은 고딕", 20F);
+            txtID.ForeColor = Color.Silver;
+            txtID.Location = new Point(103, 171);
+            txtID.Margin = new Padding(4);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(362, 52);
+            txtID.TabIndex = 2;
+            txtID.Text = "아이디";
+            txtID.Enter += txtID_Enter;
+            txtID.Leave += txtID_Leave;
             // 
-            // lblPassword
+            // txtPW
             // 
-            lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("맑은 고딕", 10F);
-            lblPassword.Location = new Point(78, 253);
-            lblPassword.Margin = new Padding(4, 0, 4, 0);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(78, 23);
-            lblPassword.TabIndex = 1;
-            lblPassword.Text = "패스워드";
-            // 
-            // txtId
-            // 
-            txtId.Font = new Font("맑은 고딕", 20F);
-            txtId.Location = new Point(155, 171);
-            txtId.Margin = new Padding(4);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(258, 52);
-            txtId.TabIndex = 2;
-            txtId.Enter += txtId_Enter;
-            txtId.Leave += txtId_Leave;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Font = new Font("맑은 고딕", 20F);
-            txtPassword.Location = new Point(155, 238);
-            txtPassword.Margin = new Padding(4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(258, 52);
-            txtPassword.TabIndex = 3;
-            txtPassword.Enter += txtPassword_Enter;
-            txtPassword.Leave += txtPassword_Leave;
+            txtPW.Font = new Font("맑은 고딕", 20F);
+            txtPW.ForeColor = Color.Silver;
+            txtPW.Location = new Point(103, 238);
+            txtPW.Margin = new Padding(4);
+            txtPW.Name = "txtPW";
+            txtPW.Size = new Size(362, 52);
+            txtPW.TabIndex = 3;
+            txtPW.Text = "패스워드";
+            txtPW.Enter += txtPW_Enter;
+            txtPW.Leave += txtPW_Leave;
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = SystemColors.ActiveCaption;
+            btnLogin.BackColor = Color.FromArgb(128, 255, 255);
+            btnLogin.Font = new Font("맑은 고딕", 20F);
             btnLogin.ForeColor = Color.FromArgb(0, 0, 192);
-            btnLogin.Location = new Point(187, 320);
+            btnLogin.Location = new Point(173, 355);
             btnLogin.Margin = new Padding(4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(185, 43);
-            btnLogin.TabIndex = 4;
+            btnLogin.Size = new Size(222, 77);
+            btnLogin.TabIndex = 1;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
-            // lbl_main
+            // lblAppName
             // 
-            lbl_main.AutoSize = true;
-            lbl_main.Font = new Font("맑은 고딕", 50F);
-            lbl_main.Location = new Point(155, 18);
-            lbl_main.Name = "lbl_main";
-            lbl_main.Size = new Size(258, 112);
-            lbl_main.TabIndex = 5;
-            lbl_main.Text = "Login";
+            lblAppName.AutoSize = true;
+            lblAppName.Font = new Font("맑은 고딕", 50F);
+            lblAppName.Location = new Point(155, 18);
+            lblAppName.Name = "lblAppName";
+            lblAppName.Size = new Size(258, 112);
+            lblAppName.TabIndex = 0;
+            lblAppName.Text = "Login";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(571, 516);
-            Controls.Add(lbl_main);
+            Controls.Add(lblAppName);
             Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
-            Controls.Add(txtId);
-            Controls.Add(lblPassword);
-            Controls.Add(lblId);
+            Controls.Add(txtPW);
+            Controls.Add(txtID);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4);
             MaximizeBox = false;
@@ -125,12 +104,9 @@
         }
 
         #endregion
-
-        private Label lblId;
-        private Label lblPassword;
-        private TextBox txtId;
-        private TextBox txtPassword;
+        private TextBox txtID;
+        private TextBox txtPW;
         private Button btnLogin;
-        private Label lbl_main;
+        private Label lblAppName;
     }
 }
