@@ -112,7 +112,7 @@ namespace LoginScreen
             txtID.Text = "아이디"; // ID 텍스트박스 초기값으로 설정
             txtID.ForeColor = Color.Silver; // ID 텍스트박스 텍스트 색상을 회색으로 변경
             txtPW.Text = "패스워드"; // PW 텍스트박스 초기값으로 설정
-            txtID.ForeColor = Color.Silver; // PW 텍스트박스 텍스트 색상을 회색으로 변경
+            txtPW.ForeColor = Color.Silver; // PW 텍스트박스 텍스트 색상을 회색으로 변경
             txtPW.UseSystemPasswordChar = false; // PW 텍스트박스에 입력된 문자를 일반 텍스트로 표시
         }
         
