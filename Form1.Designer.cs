@@ -33,13 +33,15 @@
             btnLogin = new Button();
             lblAppName = new Label();
             lblErrorMsg = new Label();
+            btnShowPW = new Button();
+            btnDlt = new Button();
             SuspendLayout();
             // 
             // txtID
             // 
             txtID.Font = new Font("맑은 고딕", 20F);
             txtID.ForeColor = Color.Silver;
-            txtID.Location = new Point(107, 194);
+            txtID.Location = new Point(69, 189);
             txtID.Margin = new Padding(4);
             txtID.Name = "txtID";
             txtID.Size = new Size(362, 52);
@@ -53,7 +55,7 @@
             // 
             txtPW.Font = new Font("맑은 고딕", 20F);
             txtPW.ForeColor = Color.Silver;
-            txtPW.Location = new Point(107, 261);
+            txtPW.Location = new Point(69, 261);
             txtPW.Margin = new Padding(4);
             txtPW.Name = "txtPW";
             txtPW.Size = new Size(362, 52);
@@ -99,11 +101,34 @@
             lblErrorMsg.Text = "아이디 또는 비밀번호가 잘못되었습니다.";
             lblErrorMsg.Visible = false;
             // 
+            // btnShowPW
+            // 
+            btnShowPW.Location = new Point(445, 266);
+            btnShowPW.Name = "btnShowPW";
+            btnShowPW.Size = new Size(61, 47);
+            btnShowPW.TabIndex = 5;
+            btnShowPW.Text = "보기";
+            btnShowPW.UseVisualStyleBackColor = true;
+            btnShowPW.Click += btnShowPW_Click;
+            // 
+            // btnDlt
+            // 
+            btnDlt.ForeColor = Color.Red;
+            btnDlt.Location = new Point(445, 189);
+            btnDlt.Name = "btnDlt";
+            btnDlt.Size = new Size(61, 47);
+            btnDlt.TabIndex = 6;
+            btnDlt.Text = "삭제";
+            btnDlt.UseVisualStyleBackColor = true;
+            btnDlt.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(571, 516);
+            Controls.Add(btnDlt);
+            Controls.Add(btnShowPW);
             Controls.Add(lblErrorMsg);
             Controls.Add(lblAppName);
             Controls.Add(btnLogin);
@@ -126,5 +151,7 @@
         private Button btnLogin;
         private Label lblAppName;
         private Label lblErrorMsg;
+        private Button btnShowPW;
+        private Button btnDlt;
     }
 }

@@ -16,11 +16,15 @@ namespace LoginScreen
             if (inputID == MyID && inputPW == MyPW)
             {
                 lblErrorMsg.Visible = false;
-                MessageBox.Show("로그인 성공!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                //MessageBox.Show("로그인 성공!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                lblErrorMsg.ForeColor = Color.Blue; lblErrorMsg.Text = "로그인 성공!"; 
+                lblErrorMsg.Visible = true;
+
             }
             else
             {
                 //MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                lblErrorMsg.ForeColor = Color.Red; lblErrorMsg.Text = "아이디 또는 비밀번호가 잘못되었습니다.";
                 lblErrorMsg.Visible = true;
             }
         }
@@ -88,5 +92,29 @@ namespace LoginScreen
         {
 
         }
+
+        private void btnShowPW_Click(object sender, EventArgs e)
+        {
+            if (txtPW.UseSystemPasswordChar)
+            {
+                txtPW.UseSystemPasswordChar = false; // PW 텍스트박스에 입력된 문자를 일반 텍스트로 표시
+                btnShowPW.Text = "숨기기"; // 버튼 텍스트 변경
+            }
+            else
+            {
+                txtPW.UseSystemPasswordChar = true; // PW 텍스트박스에 입력된 문자를 비밀번호 형태로 표시
+                btnShowPW.Text = "보기"; // 버튼 텍스트 변경
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "아이디"; // ID 텍스트박스 초기값으로 설정
+            txtID.ForeColor = Color.Silver; // ID 텍스트박스 텍스트 색상을 회색으로 변경
+            txtPW.Text = "패스워드"; // PW 텍스트박스 초기값으로 설정
+            txtID.ForeColor = Color.Silver; // PW 텍스트박스 텍스트 색상을 회색으로 변경
+            txtPW.UseSystemPasswordChar = false; // PW 텍스트박스에 입력된 문자를 일반 텍스트로 표시
+        }
+        
     }
 }
